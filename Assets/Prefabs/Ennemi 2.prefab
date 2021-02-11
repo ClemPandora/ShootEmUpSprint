@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1370343805277226731}
   - component: {fileID: 1370343805277226728}
   m_Layer: 0
-  m_Name: Ennemi
+  m_Name: Ennemi 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 6825459357005141842, guid: 65ba913a9c533ec41b6606486e9d9ca9,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14351194, g: 0.29843017, b: 0.7075472, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,6 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c988c245b0e81c4eb90e02eb4ec9de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 2
-  verticalSpeed: 2
-  amplitude: 0.5
+  horizontalSpeed: 1
+  verticalSpeed: 0.5
+  amplitude: 5
