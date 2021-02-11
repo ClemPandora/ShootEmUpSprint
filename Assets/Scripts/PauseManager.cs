@@ -5,16 +5,32 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
     public bool paused;
-    
+
+    public GameObject pauseUI;
     
     void Start()
     {
-        
+        paused = false;
+        pauseUI.SetActive(false);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            paused = !paused;
+        }
+
+        if (paused)
+        {
+            Time.timeScale = 0;
+            pauseUI.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseUI.SetActive(false);
+        }
     }
 }
