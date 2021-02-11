@@ -19,7 +19,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && timerShoot < 0)
         {
             Instantiate(shoot, transform.position, Quaternion.identity);
-            timerShoot = 1;
+            timerShoot = 0.5f;
         }
 
         if (timerShoot >= 0)
