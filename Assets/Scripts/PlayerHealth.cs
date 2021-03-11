@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         actualHealth = maxHealth;
 
-        healthBar.highValue = maxHealth;
+        healthBar.maxValue = maxHealth;
         healthBar.value = actualHealth;
     }
     
