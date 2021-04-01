@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,23 +8,34 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth;
     public float actualHealth;
-
-    public Slider healthBar;
+    public Text healthBar;
     
     
     void Start()
     {
-        actualHealth = maxHealth;
-
-        healthBar.maxValue = maxHealth;
-        healthBar.value = actualHealth;
+        healthBar.text = actualHealth.ToString();
     }
-    
+
+    private void Update()
+    {
+        if (  actualHealth > maxHealth)
+        {
+            healthBar.text = maxHealth.ToString() + "+";
+        }
+
+        if (actualHealth < maxHealth)
+        {
+            healthBar.text = actualHealth.ToString();
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         actualHealth -= damage;
 
-        healthBar.value = actualHealth;
+        healthBar.text = actualHealth.ToString();
+
+      
         
         if (actualHealth <= 0)
         {
