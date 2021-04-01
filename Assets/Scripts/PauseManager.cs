@@ -33,4 +33,9 @@ public class PauseManager : MonoBehaviour
             pauseUI.SetActive(false);
         }
     }
+
+    public void Unpause()
+    {
+        paused = false;
+    }
 }
