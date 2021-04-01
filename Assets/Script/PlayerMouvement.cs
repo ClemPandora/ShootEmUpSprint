@@ -27,12 +27,25 @@ public class PlayerMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            Debug.Log(("cll"));
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+        
+            movement.x = horizontal;
+            movement.y = vertical;
+            movement = movement.normalized * speed;
+        }
 
-        movement.x = horizontal;
-        movement.y = vertical;
-        movement = movement.normalized * speed;
+        if (mousePos != Vector3.zero)
+        {
+            Debug.Log(mousePos);
+            transform.position = Vector2.MoveTowards(transform.position, mousePos, 0.1f) ;
+        }
+      
 
         transform.Translate( movement * Time.deltaTime);
 
@@ -45,6 +58,9 @@ public class PlayerMouvement : MonoBehaviour
         {
             speed = Mathf.Lerp(speedMax, speedInitial, 3);
         }
+
+        
+
     }
     
     void LateUpdate()
