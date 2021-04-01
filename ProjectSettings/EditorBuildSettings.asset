@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lelio.unity
     guid: 4a108c30a9ad8c14090b1796b353c7e5
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: ad372d7078c792a4d8d2bb73890ab96e
   m_configObjects: {}
