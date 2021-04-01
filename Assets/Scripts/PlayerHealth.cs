@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -13,7 +14,9 @@ public class PlayerHealth : MonoBehaviour
     
     void Start()
     {
-        healthBar.text = actualHealth.ToString();
+        
+        actualHealth = 10;
+        healthBar.text = "PV : " + actualHealth.ToString();
     }
 
     private void Update()
@@ -25,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (actualHealth < maxHealth)
         {
-            healthBar.text = actualHealth.ToString();
+            healthBar.text = "PV : " + actualHealth.ToString();
         }
     }
 
@@ -46,5 +49,11 @@ public class PlayerHealth : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOverScene");
+    }
+
+    public void HealthUp()
+    {
+        actualHealth++;
     }
 }
